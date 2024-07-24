@@ -3,18 +3,14 @@
 	"version": "0.0.1",
 	"author": "TEEMO <762366705@qq.com>",
 	"private": false,
-	"main": "lib/qiaen-spliter.umd.min.js",
+	"main": "./dist/index.umd.js",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"lib": "vite build --target lib --name qiaen-spliter --dest lib ./src/main.js",
-		"build": "vite build --target lib --name qiaen-spliter --dest dist ./src/main.js",
-		"publish": "npm publish --registry"
+		"build": "vite build -c lib.build.ts"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/qiaen/qiaen-spliter"
-	},
+	"license": "MIT",
+	"repository": "https://github.com/qiaen/qiaen-spliter.git",
 	"dependencies": {
 		"vue": "^3.2.33"
 	},
@@ -27,5 +23,9 @@
 		"typescript": "^5.0.4",
 		"vite": "^5.3.4",
 		"vue-tsc": "^1.2.0"
-	}
+	},
+	"files": [
+		"dist",
+		"README.md"
+	]
 }
