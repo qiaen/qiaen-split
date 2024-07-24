@@ -10,7 +10,10 @@
 		"build": "vite build -c lib.build.ts"
 	},
 	"license": "MIT",
-	"repository": "https://github.com/qiaen/qiaen-spliter.git",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/qiaen/qiaen-spliter.git"
+	},
 	"dependencies": {
 		"vue": "^3.2.33"
 	},
