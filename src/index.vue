@@ -13,29 +13,14 @@
 </template>
 <script lang="ts" setup>
 import { computed, ref, watch, withDefaults, defineProps, defineEmits } from 'vue'
+import { Props, Emits } from './types/index.d'
+const props = withDefaults(defineProps<Props>(), {
+	min: 10,
+	value: 50,
+	split: 'vertical'
+})
 
-const props = withDefaults(
-	defineProps<{
-		/** 允许拖拽的最小百分比数字 */
-		min: number
-		/** 分割值，即分割线所在的百分比 */
-		value: number
-		/** 分割的方向 - vertical：横向 - horizontal：纵向 */
-		split: 'vertical' | 'horizontal'
-	}>(),
-	{
-		min: 10,
-		value: 50,
-		split: 'vertical'
-	}
-)
-
-const emits = defineEmits<{
-	/** 拖拽的分割值，即向左的百分比数字 */
-	(e: 'resize', param: number): void
-	/** 拖拽结束的分割值，即向左的百分比数字，可用于节流 */
-	(e: 'resized', param: number): void
-}>()
+const emits = defineEmits<Emits>()
 
 const active = ref(false)
 
@@ -174,4 +159,4 @@ function onMouseUp() {
 		}
 	}
 }
-</style>
+</style>./types
