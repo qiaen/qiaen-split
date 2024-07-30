@@ -51,7 +51,7 @@ function onMouseMove(e: MouseEvent) {
 	if (e.buttons === 0 || e.which === 0) {
 		active.value = false
 	}
-
+	e.preventDefault()
 	if (active.value) {
 		let offset = 0
 		let target: any = e.currentTarget

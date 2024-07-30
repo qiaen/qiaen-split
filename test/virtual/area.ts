@@ -152,13 +152,12 @@ export class AreaManager {
 	// 获取某个位置元素距离开始的偏移量
 	getOffsetByIndex(index?: number) {
 		if (!index) return 0
-
 		let offset = 0
 		for (let i = 0; i < index; i++) {
 			const itemSize = this.sizeMap.get(i)
 			offset += itemSize ?? DEFAULT_ESTIMATE
 		}
-
+		// console.log(offset)
 		return offset
 	}
 }
